@@ -1,7 +1,8 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Q2 {
-    public double FastPower(int x) {
+    public double FastPower(double x) {
         if (x==0) {
             return 1;
         }
@@ -18,11 +19,17 @@ public class Q2 {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("Input a number no less than 0, negative number will terminate the code: ");
-            int input = scanner.nextInt();
-            if (input<0) {
-                break;
+            try {
+                double input = scanner.nextDouble();
+                if (input < 0) {
+                    break;
+                }
+                System.out.println(q2.FastPower(input));
             }
-            System.out.println(q2.FastPower(input));
+            catch (InputMismatchException e) {
+                System.out.println("Invalid Input!");
+                scanner.next();
+            }
         }
         System.out.println("The function has been terminated!");
     }
