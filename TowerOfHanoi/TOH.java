@@ -104,7 +104,7 @@ void tohIterative(int num_of_disks, Stack
 				src, Stack aux, Stack dest)
 {
 	int i, total_num_of_moves;
-	char s = 'S', d = 'D', a = 'A';
+	char s = 'L', d = 'M', a = 'R';
 
 	// If number of disks is even, then
 	// interchange destination pole and
